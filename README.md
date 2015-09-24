@@ -1,5 +1,7 @@
 # QRCode
 
+####A QRCode generator written in Object-C with native api
+
 ## Usage
 
 ```
