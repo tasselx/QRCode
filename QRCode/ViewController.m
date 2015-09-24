@@ -42,10 +42,23 @@
     [slider addTarget:self action:@selector(changeImageViewScale:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider];
     
+    
+    
+    UIButton *saveToAlbumBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [saveToAlbumBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [saveToAlbumBtn setFrame:CGRectMake(0, 450, self.view.frame.size.width, 40)];
+    [saveToAlbumBtn setTitle:@"保存到相册" forState:UIControlStateNormal];
+    [saveToAlbumBtn addTarget:self action:@selector(saveToAlbum) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:saveToAlbumBtn];
 }
 
 - (void)changeImageViewScale:(UISlider *)slider {
     _imageView.transform = CGAffineTransformMakeScale(slider.value, slider.value);
+}
+
+- (void)saveToAlbum {
+
+    UIImageWriteToSavedPhotosAlbum(_imageView.image, self, nil, NULL);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

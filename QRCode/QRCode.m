@@ -51,10 +51,13 @@
             break;
         case ErrorCorrectionMedium:
             correctionLevel = @"M";
+            break;
         case ErrorCorrectionQuartile:
             correctionLevel = @"Q";
+            break;
         case ErrorCorrectionHigh:
             correctionLevel = @"H";
+            break;
         default:
             break;
     }
@@ -82,8 +85,6 @@
 
     return scaledQRImage;
 }
-
-
 
 - (UIImage *)makeRoundCornersWithRadius:(CGFloat)radius
                                   image:(UIImage *)originImage
@@ -133,7 +134,4 @@
     return qrImage;
 
 }
-
-
-
 @end
